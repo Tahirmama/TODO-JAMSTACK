@@ -23,11 +23,11 @@ let Dash = () => {
               netlifyIdentity.logout();
             }}
           >
-            LOG OUT {user.user_metadata.full_name}
+            LOGOUT ( "{user.user_metadata.full_name.toUpperCase()}")
           </NavLink>
         )}
       </Flex>
-      <span>UserName: {user && user.user_metadata.full_name}</span>
+      <span>USER NAME = <i>{user.user_metadata.full_name.toUpperCase()}</i></span>
     </Container>
   );
 };

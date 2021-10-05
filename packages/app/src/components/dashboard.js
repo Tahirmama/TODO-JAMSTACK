@@ -51,6 +51,9 @@ export default () => {
           </NavLink>
         )}
       </Flex>
+      <hr/>
+      <br/>
+
       <Flex
         as="form"
         onSubmit={e => {
@@ -60,7 +63,7 @@ export default () => {
         }}
       >
         <Label sx={{ display: "flex" }}>
-          <span>ADD&nbsp;TODO</span>
+          <span style={{fontSize:"30px"}}>ADD&nbsp;TODO</span>
           <Input ref={inputRef} sx={{ marginLeft: 2 }} />
         </Label>
         <Button sx={{ marginLeft: 2,

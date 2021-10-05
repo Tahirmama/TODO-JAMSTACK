@@ -19,7 +19,7 @@ let DashLoggedOut = props => {
       '&:hover': {
         backgroundColor: 'White',
         color: 'primary',
-        cursor: 'pointer'
+        cursor: 'pointer',
       }
 
     }

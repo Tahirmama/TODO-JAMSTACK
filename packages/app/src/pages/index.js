@@ -8,8 +8,8 @@ export default props => {
   const { user, identity: netlifyIdentity } = useContext(IdentityContext);
   return (
     < Container >
-      <Flex as="nav">
-        <NavLink as={Link} to="/" p={2}>
+      <Flex as="nav" >
+        <NavLink as={Link} to="/" p={2} >
           HOME
         </NavLink>
         <NavLink as={Link} to={"/app"} p={2}>
@@ -21,6 +21,8 @@ export default props => {
           </NavLink>
         )}
       </Flex>
+      <hr/>
+      
       <Flex sx={{ flexDirection: "column", padding: 4 }}>
         <Heading as="h1">
           TODO APP
@@ -30,7 +32,8 @@ export default props => {
           '&:hover': {
             backgroundColor: 'White',
             color: 'primary',
-            cursor: 'pointer'
+            cursor: 'pointer',
+          
           }
         }}
           onClick={() => {
@@ -39,6 +42,7 @@ export default props => {
           LOG IN
         </Button>
       </Flex>
+      
     </Container >
   );
 };

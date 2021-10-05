@@ -10,10 +10,10 @@ export default props => {
     < Container >
       <Flex as="nav">
         <NavLink as={Link} to="/" p={2}>
-          Home
+          HOME
         </NavLink>
         <NavLink as={Link} to={"/app"} p={2}>
-          Dashboard
+          DASHBOARD
         </NavLink>
         {user && (
           <NavLink href="#!" p={2}>

@@ -17,7 +17,7 @@ export default props => {
         </NavLink>
         {user && (
           <NavLink href="#!" p={2}>
-            {user.user_metadata.full_name}
+            {user.user_metadata.full_name.toUpperCase()}
           </NavLink>
         )}
       </Flex>

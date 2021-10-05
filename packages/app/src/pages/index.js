@@ -1,26 +1,44 @@
-import React from "react";
-import { Container, Heading, Button, Flex  } from "@theme-ui/components";
-export default props => (
-  <Container>
-    <Flex sx={{flexDirection: "column", padding:4}}>
-    <Heading as="h1">
-      TODO APP
-    </Heading>
-    <Button sx={{
-      marginTop: 3,
-      '&:hover': {
-        backgroundColor: 'White',
-        color: 'primary',
-        cursor: 'pointer'
-      }
-     
-    }
-  }
-  onClick={()=> {
-    alert("clicked")
-  }}  >
-      LOG IN
-    </Button>
-    </Flex>
-  </Container>
-);
+import React, { useContext } from "react";
+import { Container, Heading, Button, Flex, NavLink } from "theme-ui";
+import { Link } from "gatsby";
+import { IdentityContext } from "../../identity-context";
+
+
+export default props => {
+  const { user, identity: netlifyIdentity } = useContext(IdentityContext);
+  return (
+    < Container >
+      <Flex as="nav">
+        <NavLink as={Link} to="/" p={2}>
+          Home
+        </NavLink>
+        <NavLink as={Link} to={"/app"} p={2}>
+          Dashboard
+        </NavLink>
+        {user && (
+          <NavLink href="#!" p={2}>
+            {user.user_metadata.full_name}
+          </NavLink>
+        )}
+      </Flex>
+      <Flex sx={{ flexDirection: "column", padding: 4 }}>
+        <Heading as="h1">
+          TODO APP
+        </Heading>
+        <Button sx={{
+          marginTop: 3,
+          '&:hover': {
+            backgroundColor: 'White',
+            color: 'primary',
+            cursor: 'pointer'
+          }
+        }}
+          onClick={() => {
+            netlifyIdentity.open();
+          }}  >
+          LOG IN
+        </Button>
+      </Flex>
+    </Container >
+  );
+};

@@ -59,7 +59,7 @@ export default () => {
         onSubmit={e => {
           e.preventDefault();
           dispatch({ type: "addTodo", payload: inputRef.current.value });
-          inputRef.current.value = ""; //submit ka baad input box epmpty hojaega iski wajah sa 
+          inputRef.current.value = ""; //submit ka baad input box empty hojaega iski wajah sa 
         }}
       >
         <Label sx={{ display: "flex" }}>

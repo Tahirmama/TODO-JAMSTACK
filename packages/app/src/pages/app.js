@@ -10,26 +10,26 @@ let DashLoggedOut = props => {
 
   return (
     <Container>
-    <Flex sx={{ flexDirection: "column", padding: 4 }}>
-    <Heading as="h1">
-      TODO APP
-    </Heading>
-    <Button sx={{
-      marginTop: 3,
-      '&:hover': {
-        backgroundColor: 'White',
-        color: 'primary',
-        cursor: 'pointer',
-      }
+      <Flex sx={{ flexDirection: "column", padding: 4 }}>
+        <Heading as="h1">
+          TODO APP
+        </Heading>
+        <Button sx={{
+          marginTop: 3,
+          '&:hover': {
+            backgroundColor: 'White',
+            color: 'primary',
+            cursor: 'pointer',
+          }
 
-    }
-    }
-      onClick={() => {
-        netlifyIdentity.open();
-      }}  >
-      LOG IN
-    </Button>
-    </Flex>
+        }
+        }
+          onClick={() => {
+            netlifyIdentity.open();
+          }}  >
+          LOG IN
+        </Button>
+      </Flex>
     </Container>
   );
 };

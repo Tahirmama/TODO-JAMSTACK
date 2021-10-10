@@ -5,8 +5,12 @@
   "repository": "https://github.com/Tahirmama/TODO-JAMSTACK.git",
   "author": "TAHIR <tahirmama8@gmail.com>",
   "license": "MIT",
-  "private":"true",
-  "workspaces":[
+  "private": "true",
+  "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "apollo-server-lambda": "^3.3.0",
+    "graphql": "^15.6.1"
+  }
 }

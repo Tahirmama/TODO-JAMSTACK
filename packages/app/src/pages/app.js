@@ -4,6 +4,7 @@ import { Container, Flex, Heading, Button, NavLink } from "theme-ui";
 import { IdentityContext } from "../../identity-context";
 import Dash from "../components/dashboard";
 import { useMutation } from '@apollo/client'; 
+import gql from 'graphql-tag';
 
 const DELETE_TODOS = gql`
     mutation deleteTodo($id: ID!){

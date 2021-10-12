@@ -3,7 +3,7 @@ import { Container, Heading, Button, Flex, NavLink } from "theme-ui";
 import { Link } from "gatsby";
 import { IdentityContext } from "../../identity-context";
 import { useMutation } from '@apollo/client'; 
-
+import gql from 'graphql-tag';
 
 const DELETE_TODOS = gql`
     mutation deleteTodo($id: ID!){

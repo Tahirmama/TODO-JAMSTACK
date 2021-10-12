@@ -5,6 +5,12 @@ import { IdentityContext } from "../../identity-context";
 import { useMutation } from '@apollo/client'; 
 
 
+const DELETE_TODOS = gql`
+    mutation deleteTodo($id: ID!){
+      deleteTodo(id: $id){
+            id
+        }
+    }`
 export default props => {
   const { user, identity: netlifyIdentity } = useContext(IdentityContext);
   ////// Delete todo

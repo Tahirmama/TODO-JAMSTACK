@@ -2,10 +2,23 @@ import React, { useContext } from "react";
 import { Container, Heading, Button, Flex, NavLink } from "theme-ui";
 import { Link } from "gatsby";
 import { IdentityContext } from "../../identity-context";
+import { useMutation } from '@apollo/client'; 
 
 
 export default props => {
   const { user, identity: netlifyIdentity } = useContext(IdentityContext);
+  ////// Delete todo
+
+  const [deleteTodo] = useMutation(DELETE_TODOS);
+  const handleDelete = (id) => {
+    deleteTodo({
+      variables: {
+        id
+      },
+      refetchQueries: [{ query: GET_TODO }]
+    })
+  }
+
   return (
     < Container >
       <Flex as="nav" >
@@ -27,6 +40,7 @@ export default props => {
         <Heading as="h1">
           TODO APP
         </Heading>
+        <Button onClick={() => {handleDelete(post.id)}}> X  </Button>
         <Button sx={{
           marginTop: 3,
           '&:hover': {

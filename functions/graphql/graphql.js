@@ -21,7 +21,6 @@ const typeDefs = gql`
   type Mutation {
     addTodo(text: String!): Todo
     updateTodoDone(id: ID!): Todo
-    deleteTodo(id: $id):Todo
   }
 `;
 
@@ -48,7 +47,6 @@ const resolvers = {
       if (!user) {
         throw new Error("Must be authenticated to insert todos");
       }
-      
       const results = await client.query(
         q.Create(q.Collection("todos"), {
           data: {
@@ -62,19 +60,6 @@ const resolvers = {
         ...results.data,
         id: results.ref.id
       };
-    },
-    deleteTodo: async (_, { id }) => {
-      try {
-        var client = new faunadb.Client({ secret: 'fnAEVROfM9AAwcdrUeHzkApIOWmHK5UC_XnaMtZk' });
-        let result = await client.query(
-          q.Delete(
-            q.Ref(q.Collection('todos'), id)
-          )
-        ); 
-        return result.ref.data;
-      } catch (err) {
-        return err.toString();
-      }
     },
     updateTodoDone: async (_, { id }, { user }) => {
       if (!user) {

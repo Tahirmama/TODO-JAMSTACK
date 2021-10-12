@@ -12,6 +12,7 @@
     "@apollo/client": "^3.4.16",
     "@theme-ui/presets": "^0.11.3",
     "apollo-link-context": "1.0.19",
+    "dotenv": "^10.0.0",
     "faunadb": "^2.11.1",
     "gatsby": "^3.14.1",
     "gatsby-plugin-create-client-paths": "^3.14.0",

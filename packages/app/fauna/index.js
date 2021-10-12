@@ -1,4 +1,3 @@
-
 const faunadb = require("faunadb");
 const q = faunadb.query;
 
@@ -30,6 +29,7 @@ async function run() {
     //     })
     //   );
     //   console.log(results);
+
     const results = await client.query(
         q.Paginate(q.Match(q.Index("todos_by_user"), "user-test"))
     );
